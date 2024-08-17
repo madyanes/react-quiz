@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import Options from './components/Options'
+import Options from './Options'
 
 function Question({ question }) {
   return (
