@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-function FinishScreen({ points, maxPossiblePoints }) {
+function FinishScreen({ points, maxPossiblePoints, highscore }) {
   const percentage = (points / maxPossiblePoints) * 100
 
   let emoji
@@ -11,10 +11,14 @@ function FinishScreen({ points, maxPossiblePoints }) {
   if (percentage === 0) emoji = '🤦‍♂️'
 
   return (
-    <p className='result'>
-      <span>{emoji}</span> You scored <strong>{points}</strong> out of{' '}
-      {maxPossiblePoints} ({Math.ceil(percentage)})
-    </p>
+    <>
+      <p className='result'>
+        <span>{emoji}</span> You scored <strong>{points}</strong> out of{' '}
+        {maxPossiblePoints} ({Math.ceil(percentage)})
+      </p>
+
+      <p className='highscore'>(highscore: {highscore} points)</p>
+    </>
   )
 }
 
